@@ -10,24 +10,34 @@
     "prettier": "prettier --ignore-path .gitignore --write \"**/*.+(js|json)\"",
     "format": "npm run prettier -- --write",
     "check-format": "npm run prettier -- --list-different",
-    "validate": "npm-run-all --parallel typescript check-format lint build"
+    "validate": "npm-run-all --parallel typescript check-format lint test build",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "axios": "^0.21.0"
+  },
   "devDependencies": {
     "@babel/cli": "^7.12.8",
     "@babel/core": "^7.12.9",
     "@babel/preset-env": "^7.12.7",
+    "@babel/preset-typescript": "^7.12.7",
+    "@types/jest": "^26.0.15",
+    "@types/jest-when": "^2.7.2",
     "@typescript-eslint/eslint-plugin": "^4.9.0",
     "@typescript-eslint/parser": "^4.9.0",
+    "babel-jest": "^26.6.3",
+    "babel-plugin-module-resolver": "^4.0.0",
     "eslint": "^7.14.0",
     "husky": "^4.3.0",
     "jest": "^26.6.3",
+    "jest-when": "^3.0.1",
     "lint-staged": "^10.5.2",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.2.1",
+    "ts-node": "^9.0.0",
     "typescript": "^4.1.2"
   }
 }
