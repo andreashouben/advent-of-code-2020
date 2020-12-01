@@ -5,9 +5,13 @@ export const findNumbersOnArrayThatAddupTo = (
   array: number[],
   number: number,
 ): {first: number; second: number} => {
-  const match = array
-    .map((value) => array.map((value1) => [value, value1]))[0]
-    .find((pair) => pair[0] + pair[1] === number)
+  const pairs: number[][] = []
+  while (array.length > 0) {
+    const first = array.splice(0, 1)[0]
+    array.forEach((value) => pairs.push([first, value]))
+  }
+
+  const match = pairs.find((pair) => pair[0] + pair[1] === number)
 
   if (match) {
     return {

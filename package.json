@@ -4,26 +4,28 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "babel src -d dist",
+    "build": "babel src -d dist --extensions .ts",
     "lint": "eslint --ignore-path .gitignore --ext .js,.ts",
     "typescript": "tsc",
     "prettier": "prettier --ignore-path .gitignore --write \"**/*.+(js|json)\"",
     "format": "npm run prettier -- --write",
     "check-format": "npm run prettier -- --list-different",
     "validate": "npm-run-all --parallel typescript check-format lint test build",
-    "test": "jest"
+    "test": "jest",
+    "start": "npm run validate && node dist/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.21.0"
+    "figlet": "^1.5.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.8",
     "@babel/core": "^7.12.9",
     "@babel/preset-env": "^7.12.7",
     "@babel/preset-typescript": "^7.12.7",
+    "@types/figlet": "^1.2.1",
     "@types/jest": "^26.0.15",
     "@types/jest-when": "^2.7.2",
     "@typescript-eslint/eslint-plugin": "^4.9.0",
