@@ -1,0 +1,5 @@
+{
+  "hooks": {
+    "pre-commit": "npm run typescript && lint-staged"
+  }
+}
