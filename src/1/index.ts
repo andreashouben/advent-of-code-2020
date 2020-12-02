@@ -1,7 +1,7 @@
 import {
   convertToArrayOfNumbers,
   findNumbersOnArrayThatAddupTo,
-} from './functions'
+} from '../common/functions'
 
 export const solveDoor01 = (data: string): number => {
   const numbers = convertToArrayOfNumbers(data)
