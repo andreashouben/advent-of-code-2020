@@ -1,19 +1,14 @@
 export const convertToArrayOfNumbers = (numbers: string): number[] => {
   return numbers.split('\n').map((value) => parseInt(value))
 }
-export const findTwoNumbersOnArrayThatAddupTo = (
-  array: number[],
+export const findNumbersOnArrayThatAddUpTo = (
+  array: number[][],
   number: number,
-): {first: number; second: number} => {
-  const pairs = permutateArray(array, 3)
-
-  const match = pairs.find((pair) => pair[0] + pair[1] === number)
+): number[] => {
+  const match = array.find((pair) => pair.reduce((a, b) => a + b) === number)
 
   if (match) {
-    return {
-      first: match[0],
-      second: match[1],
-    }
+    return match
   }
   throw new Error('no Match found')
 }

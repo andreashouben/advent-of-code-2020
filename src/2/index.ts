@@ -4,9 +4,10 @@ import {
   permutateArray,
 } from '../common/functions'
 
-export const solveDoor01 = (data: string): number => {
+export const solveDoor02 = (data: string): number => {
   const numbers = convertToArrayOfNumbers(data)
-  const groups = permutateArray(numbers)
-  const match = findNumbersOnArrayThatAddUpTo(groups, 2020)
+  const permutated = permutateArray(numbers, 3)
+  const match = findNumbersOnArrayThatAddUpTo(permutated, 2020)
+  console.log(match)
   return match.reduce((a, b) => a * b)
 }
