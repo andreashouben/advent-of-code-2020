@@ -1,7 +1,7 @@
 export const convertToArrayOfNumbers = (numbers: string): number[] => {
   return numbers.split('\n').map((value) => parseInt(value))
 }
-export const findNumbersOnArrayThatAddupTo = (
+export const findTwoNumbersOnArrayThatAddupTo = (
   array: number[],
   number: number,
 ): {first: number; second: number} => {

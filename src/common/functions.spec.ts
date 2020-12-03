@@ -1,6 +1,6 @@
 import {
   convertToArrayOfNumbers,
-  findNumbersOnArrayThatAddupTo,
+  findTwoNumbersOnArrayThatAddupTo,
 } from './functions'
 
 describe('functions for door 1', () => {
@@ -15,12 +15,22 @@ describe('functions for door 1', () => {
       expect(actual).toEqual([1, 2, 3])
     })
   })
-  describe('should return the two numbers of an array that add up to an expected value', () => {
-    const array = [1, 2, 3]
+  describe('findTwoNumbersOnArrayThatAddupTo', () => {
+    it('should return the two numbers of an array that add up to an expected value', () => {
+      const array = [1, 2, 3]
 
-    const {first, second} = findNumbersOnArrayThatAddupTo(array, 3)
+      const {first, second} = findTwoNumbersOnArrayThatAddupTo(array, 3)
 
-    expect(first).toEqual(1)
-    expect(second).toEqual(2)
+      expect(first).toEqual(1)
+      expect(second).toEqual(2)
+    })
+  })
+
+  describe('permutateArray', () => {
+    it('should permutate an array with unique entries', () => {
+
+
+
+    })
   })
 })
