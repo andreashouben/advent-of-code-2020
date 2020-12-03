@@ -18,24 +18,26 @@ export const findTwoNumbersOnArrayThatAddupTo = (
   throw new Error('no Match found')
 }
 
-export const permutateArray = (array: number[], width = 2): number[][] => {
-  const pairs: number[][] = []
-  if (width == 2) {
-    while (array.length > 0) {
-      const first = array.splice(0, 1)
-      array.forEach((value) => pairs.push([...first, value]))
-    }
-  } else if (width === 3) {
-    while (array.length > 0) {
-      const pair = []
-      const first = array.splice(0, 1)
-      const arrayClone = [...array]
-      while (arrayClone.length > 0) {
-        const second = arrayClone.splice(0, 1)
-        arrayClone.forEach((value) => pairs.push([...first, ...second, value]))
-      }
+const recursive = (
+  array: number[],
+  i: number,
+  maxlength: number,
+  groupStart: number[],
+  groups: number[][],
+) => {
+  while (array.length > 0) {
+    groupStart[i] = array.splice(0, 1)[0]
+    if (i < maxlength - 2) {
+      recursive([...array], i + 1, maxlength, groupStart, groups)
+    } else {
+      array.forEach((val) => groups.push([...groupStart, val]))
     }
   }
+}
 
-  return pairs
+export const permutateArray = (array: number[], width = 2): number[][] => {
+  const groups: number[][] = []
+  recursive(array, 0, width, new Array(width - 1), groups)
+
+  return groups
 }
