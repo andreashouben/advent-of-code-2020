@@ -3,12 +3,13 @@ import {data as dataDay01} from './common/data'
 import {data as dataDay03} from './3/data'
 import figlet from 'figlet'
 import {solveDoor02} from './2'
-import {solveDoor03} from './3'
+import {solveDoor03_1, solveDoor03_2} from './3'
 const run = () => {
   const solutions = [
     ['01', solveDoor01(dataDay01)],
     ['02', solveDoor02(dataDay01)],
-    ['03.1', solveDoor03(dataDay03)],
+    ['03.1', solveDoor03_1(dataDay03)],
+    ['03.2', solveDoor03_2(dataDay03)],
   ]
 
   console.log(figlet.textSync('Advent of code'))
