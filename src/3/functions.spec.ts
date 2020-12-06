@@ -19,16 +19,16 @@ describe('travelHorizontal', () => {
 
     const targetCoordinate = travelHorizontal(mapArray, startCoordinate, 3)
 
-    expect(targetCoordinate).toEqual([3, 0])
+    expect(targetCoordinate).toEqual([0, 3])
   })
 
   it('should start back on the left side when it reaches the end of the string', () => {
     const mapArray = ['.....']
-    const startCoordinate = [4, 0]
+    const startCoordinate = [0, 4]
 
     const targetCoordinate = travelHorizontal(mapArray, startCoordinate, 3)
 
-    expect(targetCoordinate).toEqual([2, 0])
+    expect(targetCoordinate).toEqual([0, 2])
   })
 })
 
@@ -39,6 +39,6 @@ describe('travelVertical', () => {
 
     const targetCordinate = travelVertical(mapArray, startCoordinate, 1)
 
-    expect(targetCordinate).toEqual([0, 1])
+    expect(targetCordinate).toEqual([1, 0])
   })
 })

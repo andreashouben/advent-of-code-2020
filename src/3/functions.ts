@@ -7,15 +7,15 @@ export const travelHorizontal = (
   travel: number,
 ): number[] => {
   const maxWidth = mapArray[0].length
-  const target = startCoordinate[0] + travel
+  const target = startCoordinate[1] + travel
   const correctTarget = target > maxWidth - 1 ? target - maxWidth : target
 
-  return [correctTarget, startCoordinate[1]]
+  return [startCoordinate[0], correctTarget]
 }
 export const travelVertical = (
   mapArray: string[],
   startCoordinate: number[],
   number: number,
 ): number[] => {
-  return [startCoordinate[0], startCoordinate[1] + number]
+  return [startCoordinate[0] + number, startCoordinate[1]]
 }

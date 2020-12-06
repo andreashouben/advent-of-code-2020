@@ -1,14 +1,20 @@
 import {solveDoor01} from './1'
 import {data as dataDay01} from './common/data'
+import {data as dataDay03} from './3/data'
 import figlet from 'figlet'
 import {solveDoor02} from './2'
+import {solveDoor03} from './3'
 const run = () => {
-  const solutions = [solveDoor01(dataDay01), solveDoor02(dataDay01)]
+  const solutions = [
+    ['01', solveDoor01(dataDay01)],
+    ['02', solveDoor02(dataDay01)],
+    ['03.1', solveDoor03(dataDay03)],
+  ]
 
   console.log(figlet.textSync('Advent of code'))
-  solutions.forEach((solution, index) => {
-    const doorNumber = (index + 1).toString().padStart(2, '0')
-    console.log(`Solution to door ${doorNumber}: ${solution}`)
+  solutions.forEach((solution) => {
+    const doorNumber = (<string>solution[0]).padEnd(4, ' ')
+    console.log(`Solution to door ${doorNumber}: ${solution[1]}`)
   })
 }
 
